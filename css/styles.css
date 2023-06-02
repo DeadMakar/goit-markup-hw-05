@@ -53,7 +53,7 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  transition: background var(--transition);
+  transition: background-color var(--transition);
 
   font-family: inherit;
   font-weight: 500;
@@ -68,7 +68,7 @@ img {
 
 .btn-hero:hover,
 .btn-hero:focus {
-  background: var(--second-main-color);
+  background-color: var(--second-main-color);
 }
 
 .btn-portfolio {
@@ -82,13 +82,14 @@ img {
   justify-content: center;
   align-items: center;
   padding: 12px 24px;
-  transition: color var(--transition), background var(--transition),
-    box-shadow var(--transition), border var(--transition);
+
+  transition: color var(--transition), background-color var(--transition),
+    border-color var(--transition), box-shadow var(--transition);
 
   line-height: var(--tipical-line-height);
   letter-spacing: 0.04em;
   color: var(--first-main-color);
-  background: var(--white-color);
+  background-color: var(--white-color);
   cursor: pointer;
   border-radius: 4px;
   border: 1px solid var(--color-btn-white);
@@ -97,7 +98,7 @@ img {
 .btn-portfolio:hover,
 .btn-portfolio:focus {
   color: #ffffff;
-  background: var(--second-main-color);
+  background-color: var(--second-main-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border: 1px solid transparent;
@@ -188,7 +189,9 @@ img {
 .header-link:focus {
   color: var(--second-main-color);
 }
-
+.header-link.current {
+  color: var(--second-main-color);
+}
 .header-link::after {
   content: "";
   position: absolute;
@@ -197,7 +200,7 @@ img {
   transition: transform var(--transition);
   width: 100%;
   height: 4px;
-  bottom: 0px;
+  bottom: -1px;
   background-color: var(--second-main-color);
   border-radius: 2px;
 }
@@ -638,41 +641,46 @@ img {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  transition: transform var(--transition);
   width: 408px;
   min-height: 584px;
+  border-radius: 4px;
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .modal-close-btn {
   position: absolute;
-  top: 32px;
-  right: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
   cursor: pointer;
+  top: 24px;
+  right: 24px;
   width: 24px;
   height: 24px;
   border-radius: 50%;
   background: var(--color-btn-white);
   border: 1px solid rgba(0, 0, 0, 0.1);
-  transition: background var(--transition), color var(--transition);
+  transition: color var(--transition);
+  transition: background-color var(--transition), border var(--transition);
 }
 
 .modal-close-btn:hover,
 .modal-close-btn:focus {
-  background: var(--second-main-color);
   color: #ffffff;
+  background-color: var(--second-main-color);
+  border: none;
 }
 
 .modal-close-btn-icon {
   fill: currentColor;
+  transition: fill var(--transition);
 }
 
 .is-hidden {
-  visibility: none;
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
